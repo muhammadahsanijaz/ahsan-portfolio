@@ -35,7 +35,7 @@ function initCanvas() {
   }
 }
 
-let mouseX = W / 2, mouseY = H / 2;
+let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
 window.addEventListener('mousemove', e => {
   mouseX = e.clientX;
   mouseY = e.clientY;
@@ -154,3 +154,20 @@ const sectionObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.4 });
 
 sections.forEach(s => sectionObserver.observe(s));
+// ── Rotating hero taglines ─────────────────────────────────
+const taglines = [
+  "// I ship multiplayer worlds — not just prototypes.",
+  "// From game design to deployment — end to end.",
+  "// Blockchain, AI, and 10+ years of clean C#.",
+  "// Turning complex systems into seamless gameplay."
+];
+let tIdx = 0;
+const tagEl = document.getElementById('hero-tagline');
+setInterval(() => {
+  tagEl.style.opacity = '0';
+  setTimeout(() => {
+    tIdx = (tIdx + 1) % taglines.length;
+    tagEl.textContent = taglines[tIdx];
+    tagEl.style.opacity = '1';
+  }, 400);
+}, 3200);

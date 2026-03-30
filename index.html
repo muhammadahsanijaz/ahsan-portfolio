@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Muhammad Ahsan Ijaz — Unity Game Developer</title>
+  <title>Ahsan — Game Dev</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
@@ -13,9 +13,10 @@
   <!-- NAV -->
   <nav id="navbar">
     <div class="nav-inner">
-      <span class="nav-logo">Ahsan<span class="dot">.</span></span>
+      <span class="nav-logo"><span class="name-accent">Ahsan.</span></span>
       <ul class="nav-links">
         <li><a href="#about">Intro</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -32,9 +33,9 @@
   <section id="hero">
     <canvas id="grid-canvas"></canvas>
     <div class="hero-content">
-      <p class="hero-tag mono">// Experienced Game Developer</p>
+      <p class="hero-tag mono" id="hero-tagline" style="font-size: 26px;">// I ship multiplayer worlds — not just prototypes.</p>
       <h1 class="hero-name">
-        Muhammad<br>
+        M<span class="dot">.</span>
         <span class="name-accent">Ahsan</span> Ijaz
       </h1>
       <p class="hero-sub">
@@ -46,7 +47,7 @@
         <span>Unreal & C++</span>
         <span>Photon Quantum</span>
         <span>ReactJS & Node JS</span>
-        <span>Orcle & Django</span>
+        <span>Oracle & Django</span>
         <span>Web3 With Solidity</span>
         <span>PHP, MySQL & Python</span>
         <span>VR / AR / MR</span>
@@ -54,8 +55,9 @@
         <span>Mirror Multiplayer</span>
       </div>
       <div class="hero-actions">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="#contact" class="btn-ghost">Hire Me</a>
+        <a href="#contact" class="btn-primary">Hire Me</a>
+        <a href="#projects" class="btn-ghost">View Projects</a>
+        
       </div>
     </div>
     <div class="hero-scroll-hint">
@@ -64,10 +66,57 @@
     </div>
   </section>
 
+<!-- WHAT I CAN DO -->
+  <section id="services">
+    <div class="container">
+      <div class="section-label mono">// 01 — What I Can Do For You</div>
+      <h2 class="section-title">Where I Add <em>Real Value</em></h2>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <span class="service-icon">🎮</span>
+          <h3>Multiplayer Game Systems</h3>
+          <p>I design and build authoritative server-client game architectures using Photon Quantum, Fusion, Mirror, and Amazon GameLift — with real-time sync, lag compensation, and scalable session management.</p>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">🤖</span>
+          <h3>AI &amp; NPC Behaviour</h3>
+          <p>From complex Boss AI to lightweight NPC awareness and gameplay tactics — I build enemy intelligence that actually challenges players: patrol, pursue, evade, ambush, and adapt.</p>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">⛓️</span>
+          <h3>Web3 &amp; Blockchain Integration</h3>
+          <p>Smart contracts in Solidity, NFT minting flows, on-chain auction systems, live wallet inventory, and multiple SDK integration like Solana and Sequence — I bridge game mechanics with blockchain without breaking the player experience.</p>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">🏗️</span>
+          <h3>Scratch-to-Deployment Builds</h3>
+          <p>I've taken multiple products from zero to live — scoping architecture, leading development, final polishing, setting up CI/CD, and shipping to iOS, Android, PC, Mac, and Meta Quest from a single codebase.</p>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">🛠️</span>
+          <h3>Editor Tooling &amp; Optimization</h3>
+          <p>Paired with deep profiling to hit frame targets across all target platforms. Custom Unity editor scripts, inspector tools, and workflow automation that save designers and engineers hours every sprint.</p>
+        </div>
+
+        <div class="service-card">
+          <span class="service-icon">👥</span>
+          <h3>Tech Lead &amp; Code Review</h3>
+          <p>I've led teams across multiple studios — setting coding standards, reviewing PRs, mentoring junior developers, and keeping complex projects clean, documented, and on schedule.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ABOUT -->
   <section id="about">
     <div class="container">
-      <div class="section-label mono">// 01 — Intro</div>
+      <div class="section-label mono">// 02 — Intro</div>
       <div class="about-grid">
         <div class="about-text">
           <h2 class="section-title">Building Not Only Games<br><em>But Deliver With Deploy.</em></h2>
@@ -97,7 +146,7 @@
             </div>
             <div class="stat">
               <span class="stat-num">6+</span>
-              <span class="stat-label">Reowned Companies</span>
+              <span class="stat-label">Renowned  Companies</span>
             </div>
             <div class="stat">
               <span class="stat-num">5+</span>
@@ -112,7 +161,13 @@
             <h3>Senior Unity Developer</h3>
             <p class="card-company">KAP Games</p>
             <p class="card-project">Captain &amp; Company</p>
-            <p class="card-desc">Crypto-based pirate ship game — implementing AI, game modes, Web3 auctions, and Photon Quantum systems.</p>
+            <ul class="card-desc-list">
+              <li>Joined at MVP — grew the game's core feature set from the ground up</li>
+              <li>Built Talent Tree, Perk system &amp; full Auction House on-chain</li>
+              <li>Engineered AI bosses: Kraken, Octopus, Jellyfish &amp; Golems with intelligent maneuvers</li>
+              <li>Wrote Photon Quantum game modes with waves, loot &amp; faction combat</li>
+              <li>Integrated Sequence SDK for live Web3 inventory &amp; blockchain transactions</li>
+            </ul>
             <span class="card-badge">Remote · Feb 2024 – Present</span>
           </div>
           <div class="links-row">
@@ -120,15 +175,15 @@
             <a href="https://github.com/muhammadahsanijaz" target="_blank" class="ext-link">GitHub ↗</a>
             <a href="https://assetstore.unity.com/packages/tools/utilities/apiquerymaster-291614" target="_blank" class="ext-link">Asset Store ↗</a>
           </div>
+          <a href="assets/Resume-Ahsan_Ijaz.pdf" download class="btn-primary resume-btn" target="_blank">⬇ Download Resume</a>
         </div>
       </div>
     </div>
   </section>
-
   <!-- PROJECTS -->
   <section id="projects">
     <div class="container">
-      <div class="section-label mono">// 02 — Projects</div>
+      <div class="section-label mono">// 03 — Projects</div>
       <h2 class="section-title">Featured <em>Work</em></h2>
       <div class="projects-grid">
 
@@ -232,7 +287,7 @@
   <!-- PORTFOLIO / ASSET -->
   <section id="portfolio">
     <div class="container">
-      <div class="section-label mono">// 03 — Published Asset</div>
+      <div class="section-label mono">// 04 — Published Asset</div>
       <h2 class="section-title">Unity Asset <em> in Store</em></h2>
       <div class="asset-card">
         <div class="asset-glow"></div>
@@ -301,15 +356,26 @@ api.<span class="c-fn">Enqueue</span>(<span class="c-kw">new</span> <span class=
   <!-- SKILLS -->
   <section id="skills">
     <div class="container">
-      <div class="section-label mono">// 04 — Skills &amp; Tools</div>
+      <div class="section-label mono">// 05 — Skills &amp; Tools</div>
       <h2 class="section-title">Technical <em>Arsenal</em></h2>
+      <div class="skills-grid">
+      <div class="skill-group">
+  <h4 class="group-label" style="font-size: 1.1rem; color: #ffb400; letter-spacing: 0.12em;">⭐ Experienced At</h4>
+  <div class="skill-tags">
+    <span class="tag tag-highlight">Unity 3D</span>
+    <span class="tag tag-highlight">Photon Quantum</span>
+    <span class="tag tag-highlight">Sequence SDK</span>
+    <span class="tag tag-highlight">C#</span>
+    <span class="tag tag-highlight">Git</span>
+  </div>
+</div>
+      </div>
+      <h4 class="group-label"></h4>
       <div class="skills-grid">
 
         <div class="skill-group">
           <h4 class="group-label">Game Development</h4>
           <div class="skill-tags">
-            <span class="tag tag-primary">Unity 3D</span>
-            <span class="tag tag-primary">Photon Quantum</span>
             <span class="tag tag-primary">Photon Fusion</span>
             <span class="tag tag-primary">Photon PUN</span>
             <span class="tag tag-primary">Mirror Multiplayer</span>
@@ -322,7 +388,6 @@ api.<span class="c-fn">Enqueue</span>(<span class="c-kw">new</span> <span class=
         <div class="skill-group">
           <h4 class="group-label">Languages</h4>
           <div class="skill-tags">
-            <span class="tag tag-secondary">C#</span>
             <span class="tag tag-secondary">C++</span>
             <span class="tag tag-secondary">Python</span>
             <span class="tag tag-secondary">JavaScript / Node.js</span>
@@ -337,7 +402,6 @@ api.<span class="c-fn">Enqueue</span>(<span class="c-kw">new</span> <span class=
           <div class="skill-tags">
             <span class="tag tag-accent">Amazon GameLift</span>
             <span class="tag tag-accent">Docker</span>
-            <span class="tag tag-accent">Sequence SDK</span>
             <span class="tag tag-accent">Web3 APIs</span>
             <span class="tag tag-accent">Solana</span>
             <span class="tag tag-accent">Smart Contracts</span>
@@ -354,7 +418,7 @@ api.<span class="c-fn">Enqueue</span>(<span class="c-kw">new</span> <span class=
             <span class="tag tag-muted">Android Studio</span>
             <span class="tag tag-muted">Xcode</span>
             <span class="tag tag-muted">Photoshop</span>
-            <span class="tag tag-muted">Git / GitHub</span>
+            <span class="tag tag-muted">GitHub / GitLab / UnitySCM</span>
           </div>
         </div>
 
@@ -379,7 +443,7 @@ api.<span class="c-fn">Enqueue</span>(<span class="c-kw">new</span> <span class=
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="container">
-      <div class="section-label mono">// 05 — Work Experience</div>
+      <div class="section-label mono">// 06 — Work Experience</div>
       <h2 class="section-title">Career <em>Timeline</em></h2>
 
       <div class="timeline">
@@ -399,6 +463,7 @@ api.<span class="c-fn">Enqueue</span>(<span class="c-kw">new</span> <span class=
               <li>Implemented Talent Tree, Perk system, and Auction House from MVP stage</li>
               <li>Built AI bosses (Octopus, Kraken, Jellyfish, Golems) with intelligent maneuvers</li>
               <li>Developed game modes using <strong>Photon Quantum</strong> with waves &amp; loot systems</li>
+              <li>wrote <strong>Pilot & Crew AI</strong> for hire that behave exactly like players help</li>
               <li>Integrated <strong>Sequence SDK</strong> for live inventory and Web3 transactions</li>
               <li>Built blockchain auction house with on-chain buy/sell orders</li>
             </ul>
@@ -529,29 +594,23 @@ api.<span class="c-fn">Enqueue</span>(<span class="c-kw">new</span> <span class=
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
-      <div class="section-label mono">// 06 — Contact</div>
+      <div class="section-label mono">// 07 — Contact</div>
       <h2 class="section-title">Let's Build<br><em>Something.</em></h2>
       <div class="contact-grid">
         <div class="contact-info">
-          <p class="contact-intro">Open to senior/lead Unity developer roles, remote or hybrid. Let's talk about your project.</p>
-          <div class="contact-details">
-            <div class="contact-item">
-              <span class="ci-label mono">Email</span>
-              <a href="mailto:ahsan.ijaz.official@gmail.com">ahsan.ijaz.official@gmail.com</a>
-            </div>
-            <div class="contact-item">
-              <span class="ci-label mono">Phone</span>
-              <a href="tel:+923324460318">+92 332 446 0318</a>
-            </div>
-            <div class="contact-item">
-              <span class="ci-label mono">Location</span>
-              <span>Lahore, Pakistan · Remote-ready</span>
-            </div>
-            <div class="contact-item">
-              <span class="ci-label mono">LinkedIn</span>
-              <a href="https://linkedin.com/in/muhammad-ahsan-ijaz" target="_blank">muhammad-ahsan-ijaz ↗</a>
-            </div>
-          </div>
+          <p class="contact-intro">
+  If you're building a multiplayer game, a Web3 title, or a complex game system —
+  I've shipped all three, at scale, for international studios.
+</p>
+<p class="contact-intro" style="margin-top: 12px;">
+  You're not taking a chance on a generalist. You're hiring a specialist with
+  <strong>10+ years of production Unity</strong> with a published Asset Store tool,
+  and a track record of joining projects and making them better — fast.
+</p>
+<p class="contact-intro" style="margin-top: 12px; color: var(--accent);">
+  Happy to hear you're building..
+</p>
+        
         </div>
 
         <form id="contact-form" class="contact-form" name="contact" method="POST" data-netlify="true">
@@ -578,6 +637,26 @@ api.<span class="c-fn">Enqueue</span>(<span class="c-kw">new</span> <span class=
           <p id="form-status" class="form-status"></p>
         </form>
       </div>
+
+      <div class="contact-bottom">
+        <div class="contact-item">
+          <span class="ci-label mono">Email</span>
+          <a href="mailto:ahsan.ijaz.official@gmail.com">ahsan.ijaz.official@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="ci-label mono">Phone</span>
+          <a href="tel:+923324460318">+92 332 446 0318</a>
+        </div>
+        <div class="contact-item">
+          <span class="ci-label mono">Location</span>
+          <span>Lahore, Pakistan · Remote-ready</span>
+        </div>
+        <div class="contact-item">
+          <span class="ci-label mono">LinkedIn</span>
+          <a href="https://linkedin.com/in/muhammad-ahsan-ijaz" target="_blank">ahsan-ijaz ↗</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -586,10 +665,11 @@ api.<span class="c-fn">Enqueue</span>(<span class="c-kw">new</span> <span class=
     <div class="container">
       <div class="footer-inner">
         <span class="nav-logo">MAI<span class="dot">.</span></span>
-        <p class="mono footer-copy">Muhammad Ahsan Ijaz · Unity Game Developer · Lahore, Pakistan</p>
+        <p class="mono footer-copy">Muhammad Ahsan Ijaz · Game Developer · Lahore, Pakistan</p>
         <div class="footer-links">
           <a href="https://linkedin.com/in/muhammad-ahsan-ijaz" target="_blank">LinkedIn</a>
-          <a href="https://github.com" target="_blank">GitHub</a>
+          <a href="https://github.com/muhammadahsanijaz" target="_blank">GitHub</a>
+          <a href="assets/Resume-Ahsan_Ijaz.pdf" download target="_blank">⬇ Download Resume</a>
         </div>
       </div>
     </div>
