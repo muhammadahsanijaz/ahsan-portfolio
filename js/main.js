@@ -156,10 +156,11 @@ const sectionObserver = new IntersectionObserver(entries => {
 sections.forEach(s => sectionObserver.observe(s));
 // ── Rotating hero taglines ─────────────────────────────────
 const taglines = [
+  "// I deliver tested & polished as quanlity & functionality",
   "// I ship multiplayer worlds — not just prototypes.",
   "// From game design to deployment — end to end.",
-  "// Blockchain, AI, and 10+ years of clean C#.",
-  "// Turning complex systems into seamless gameplay."
+  "// I have Blockchain, AI, and 10+ years of clean C#.",
+  "// I Turn complex systems into seamless gameplay."
 ];
 let tIdx = 0;
 const tagEl = document.getElementById('hero-tagline');
