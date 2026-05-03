@@ -172,3 +172,120 @@ setInterval(() => {
     tagEl.style.opacity = '1';
   }, 400);
 }, 3200);
+
+// ── PROJECT IMAGE CONFIG ──────────────────────────────────
+// Fill in which image files belong to each project.
+// Add as many images as you have — gallery handles any number.
+const BASE = 'assets/images/SS/';
+const projectGalleries = {
+  'captain':      ['CnC1.jpg', 'CnC2.jpg', 'CnC3.jpg'],
+  'moonkarts':    ['Moonkart1.jpg', 'Moonkart2.jpg', 'Moonkart3.jpg'],  
+  'gnomewars':    ['GnomeWar1.jpg', 'GnomeWar2.jpg', 'GnomeWar3.jpg'],
+  'arthur':       ['Arthur1.jpg', 'Arthur2.jpg', 'Arthur3.jpg'],
+  'xana':         ['XANA.jpg', 'XANA2.jpg', 'XANA3.jpg'],
+  'skyforge':     ['Skyforge1.jpg', 'Skyforge2.jpg'],
+  'petidletycoon':['Pet1.jpg', 'Pet2.jpg', 'Pet3.jpg'],
+  'historyclash': ['HC1.jpg', 'HC2.jpg', 'HC3.jpg'],
+};
+
+// ── GALLERY MODAL ─────────────────────────────────────────
+const galleryModal  = document.getElementById('gallery-modal');
+const galleryImg    = document.getElementById('gallery-img');
+const galleryPrev   = document.getElementById('gallery-prev');
+const galleryNext   = document.getElementById('gallery-next');
+const galleryClose  = document.getElementById('gallery-close');
+const galleryThumbs = document.getElementById('gallery-thumbs');
+const galleryCur    = document.getElementById('gallery-current');
+const galleryTot    = document.getElementById('gallery-total');
+
+let currentImages = [];
+let currentIndex  = 0;
+
+function openGallery(projectKey) {
+  const images = (projectGalleries[projectKey] || []).map(f => BASE + f);
+  if (!images.length) return;
+  currentImages = images;
+  currentIndex  = 0;
+  renderGallery();
+  galleryModal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function renderGallery() {
+  galleryImg.src = currentImages[currentIndex];
+  galleryCur.textContent = currentIndex + 1;
+  galleryTot.textContent = currentImages.length;
+
+  galleryThumbs.innerHTML = '';
+  currentImages.forEach((src, i) => {
+    const t = document.createElement('img');
+    t.src = src;
+    if (i === currentIndex) t.classList.add('active');
+    t.addEventListener('click', () => { currentIndex = i; renderGallery(); });
+    galleryThumbs.appendChild(t);
+  });
+
+  galleryPrev.style.display = currentImages.length > 1 ? '' : 'none';
+  galleryNext.style.display = currentImages.length > 1 ? '' : 'none';
+}
+
+galleryPrev.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  renderGallery();
+});
+galleryNext.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  renderGallery();
+});
+galleryClose.addEventListener('click', closeGallery);
+galleryModal.addEventListener('click', e => { if (e.target === galleryModal) closeGallery(); });
+
+function closeGallery() {
+  galleryModal.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  if (galleryModal.style.display === 'flex') {
+    if (e.key === 'ArrowLeft')  { currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length; renderGallery(); }
+    if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % currentImages.length; renderGallery(); }
+    if (e.key === 'Escape')     closeGallery();
+  }
+  if (videoModal.style.display === 'flex' && e.key === 'Escape') closeVideo();
+});
+
+// Wire up gallery buttons
+document.querySelectorAll('.thumb-gallery').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const card = btn.closest('[data-gallery]');
+    if (card) openGallery(card.dataset.gallery);
+  });
+});
+
+// ── VIDEO MODAL ───────────────────────────────────────────
+const videoModal  = document.getElementById('video-modal');
+const videoIframe = document.getElementById('video-iframe');
+const videoClose  = document.getElementById('video-close');
+
+function openVideo(videoId) {
+  videoIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+  videoModal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeVideo() {
+  videoIframe.src = '';
+  videoModal.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+videoClose.addEventListener('click', closeVideo);
+videoModal.addEventListener('click', e => { if (e.target === videoModal) closeVideo(); });
+
+document.querySelectorAll('.thumb-play').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    openVideo(btn.dataset.video);
+  });
+});
